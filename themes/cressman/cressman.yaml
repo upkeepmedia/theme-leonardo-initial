@@ -1,9 +1,0 @@
-streams:
- schemes:
-   theme:
-     type: ReadOnlyStream
-     prefixes:
-       '':
-         - user/themes/cressman
-         - user/themes/raphael
-         - user/themes/upkeep
