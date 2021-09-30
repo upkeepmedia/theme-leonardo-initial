@@ -1,0 +1,25 @@
+<div class="flex flex-row justify-end bg-gray-700"> 
+    <div class="z-20 relative bg-cover bg-right rounded-3xl {{page.header.bg_color ? page.header.bg_color : 'top-4 left-0 w-11/12 bg-secondary'}}" 
+        {% if not page.header.bg_color %}
+            style="background-image:url({{ media[page.header.bg].url  ? media[page.header.bg].url : media['user://assets/' ~ upkeep.bg|first.name].url}})"
+        {% endif %}
+        >
+        <div class="absolute rounded-3xl {{ page.header.bg_color ? 'hidden'}} top-0 right-0 h-full w-full bg-gray-900 bg-opacity-30"></div>
+        <div class="px-8 md:py-24 relative z-20 {{page.header.container ? 'container mx-auto'}}">
+            <div class="{{ page.adjacentSibling(-1).template == 'modular/boxes' ? 'pb-14' }} tracking-widest pb-12 py-10 lg:pt-16 lg:pb-24 mx-auto {{ page.header.textalign ?? 'text-center'}} text-light">
+                <div class="text-white text-3xl md:text-5xl mb-8 tracking-wider">
+                    {{ page.content|raw }}
+                </div>
+                {% if page.header.button_page and page.header.button_text %}
+                    {% set targetPage = page.find(page.header.button_page) %}
+                    {% if targetPage.template == 'form' or targetPage.template == 'modular/form' %}
+                        {% set formPage = targetPage %}
+                        <a data-toggle="modal" data-target="#formModal_{{page.title|hyphenize}}" href="#" class="openModal btn rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-3">{{page.header.button_text}}</a>
+                    {% else %}
+                        <a href="{{targetPage.url}}" class="rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-3 {{page.header.button_color}}">{{page.header.button_text}}</a>		
+                    {% endif %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>

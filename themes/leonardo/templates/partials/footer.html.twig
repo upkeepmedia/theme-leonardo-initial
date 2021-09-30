@@ -1,0 +1,160 @@
+
+{% if config.plugins['google-rating-badge'].enabled %}
+	{{reviews()}}
+{% endif %} 
+
+<div class="prefooter-banner bg-black">
+	<div class="container mx-auto w-8/12 lg:pt-28 lg:pb-10">
+        <div class="flex flex-row items-center py-18">
+            <div class="w-7/12">    
+                <span class="pseudo-dash flex flex-row items-center text-green-400"> {{ upkeep.prefooter_subtitle }}</span>	
+                <h2 class="text-white text-3xl"> {{upkeep.prefooter_title}} </h2>
+            </div>
+            <div class="w-5/12 text-center">
+                <a  href="{{upkeep.prefooter_button_link}}" 
+                    class="rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-3">
+                    Find an Agent!
+                </a>
+            </div>
+        </div>
+	</div>
+</div>
+<footer class="bg-black">
+	<div class="container mx-auto w-8/12 pt-10 md:py-12">	
+		<div class="flex flex-col lg:flex-row lg:space-x-4">
+			<div class="mb-10 text-white flex-1">
+				<p class="text-2xl text-white font-heading uppercase font-bold mb-4 pr-10">{{upkeep.company_name}}</p>
+				<div class="content">
+                    {{upkeep.address|markdown}}
+                
+                    {% for soc in upkeep.social %}					
+                        <a target="_blank" class="text-white mr-1" href="{{soc.url}}"><i class="{{soc.icon}}" aria-hidden="true"></i><span class="sr-only">{{soc.name}} logo</span></a> 	
+                    {% endfor %}
+                </div>
+			</div>
+			<div class="mb-10 flex-1">
+				<p class="text-2xl text-white font-heading uppercase font-bold mb-4">Our Company</p>
+				<ul class="list-unstyled">
+					{% if upkeep.menu_as_links %}
+						<li class="mb-2"><a class="text-white" href="/">Home</a></li>		
+					{% for child in pages.children if child.published and child.visible and not page.header.dropdown %}
+						<li class="mb-2"><a class="text-white" href="{{child.url}}">{{child.menu}}</a></li>
+					{% endfor %}
+					{% else %}
+					{% for fl in upkeep.footer_links %}
+						<li class="mb-2"><a class="text-white" {{page.find(fl.page).template == 'external' ? 'target="_blank"'}} href="{{page.find(fl.page).url}}">{{fl.text}}</a></li>
+					{% endfor %}
+					{% endif %}			
+				</ul>
+				{% if upkeep.grade_us %}		
+					<a href="https://grade.us/nelson-property-management/" class="btn text-sm mt-6 text-white" data-content="Review Us" data-replace="true">Review Us</a><script src="https://platform.reviewmgr.com/stream.js"></script>
+				{% endif %}
+
+			</div>
+			<div class="mb-10 flex-1">
+				{% if upkeep.footer_right == 'recent_posts'%}
+					<p class="text-2xl text-white font-heading uppercase  font-bold mb-4">{{upkeep.footer_right_title ?? 'Recent Posts'}}</p>
+					<ul class="list-unstyled">
+						{% for post in page.find(upkeep.footer_recent_posts).children|slice(0,5) %}
+							<li><a class="text-white" href="{{post.url}}">{{post.title}}</a></li>
+						{% endfor %}						
+					</ul>
+				{% elseif upkeep.footer_right == 'website_links'%}					
+					<p class="text-2xl text-white font-heading uppercase font-bold mb-4">{{upkeep.footer_right_title ?? 'Important Links'}}</p>
+					<ul class="list-unstyled">
+						{% for fl in upkeep.website_links %}
+							<li class="mb-2"><a class="text-white" href="{{page.find(fl.page).url}}">{{fl.text}}</a></li>
+						{% endfor %}
+						{% for soc in upkeep.social %}					
+							<a target="_blank" class="text-white mr-1" href="{{soc.url}}"><i class="{{soc.icon}}" aria-hidden="true"></i><span class="sr-only">{{soc.name}} logo</span></a> 	
+						{% endfor %}			
+					</ul>
+				{% elseif upkeep.footer_right == 'areas'%}					
+					{% set areaPage = page.find(upkeep.areas_page|default('/areas-we-serve')) %}
+					<p class="text-2xl text-white font-heading uppercase font-bold mb-4">{{upkeep.footer_right_title ?? 'Areas We Serve'}}</p>
+					<div class="list-unstyled grid grid-cols-2 gap-4">
+						{% if areaPage.template == 'counties' %}
+							{% set areas = areaPage.header.counties %}
+						{% else %}
+							{% set areas = areaPage.header.areas %}
+						{% endif %}
+						{% for area in areas|slice(0,12) %}
+							<div class="">
+								{% if loop.last and areas|length > 12 %}
+								<a class="text-white" href="{{areaPage.url}}">See All Areas</a>
+								{% else %}
+								<a class="text-white" {{ area.page ? 'href="' ~ page.find(area.page).url ~ '"'  }}>{{area.name}}</a>
+								{% endif %}
+							</div>
+						{% endfor %}					
+					</div>				
+				{% endif %}
+			</div>			
+		</div>
+		<div class="flex border-t-4 border-white pt-4 justify-between">
+			<ul class="list-unstyled">
+				{% for legal in page.find('/legal').children %}
+					{{ loop.first ? '' : ' | '}} <li class="text-white inline-block"><a class="text-white" href="{{legal.url}}">{{legal.title}} </a></li>
+				{% endfor %}
+				| <li class="text-white inline-block"><a class="text-white" href="/sitemap">{{"Sitemap"|t}}</a></li>
+			</ul>
+			<div class="text-right">
+				<p class="text-white">{{ upkeep.footer_prefix ?? 'Property Management Websites by '}}<a rel="nofollow" href="https://www.upkeepmedia.com" class="text-upkeep">Upkeep Media</a></p>
+			</div>
+		</div>
+	</div>
+</footer>
+
+<style>
+	.content h2, .content .h2 {
+		font-size: 2.4rem;
+		letter-spacing: unset;
+		font-family: 'Merriweather';
+		font-weight: 800;
+		color: black;
+	}
+
+	.content h5, .content h5 {
+		letter-spacing: unset;
+		font-family: 'Merriweather';
+	}
+
+	#Awards h2, #Awards h5 {
+		color: white!important;
+	}
+
+	.pseudo-dash, .pseudo--dash {
+		position: relative;
+		padding-left: 39px;
+		padding-right: 38px;
+	}
+
+	.pseudo-dash::before {
+		content: '';
+		position: absolute;
+		width: 33px;
+		height: 3px;
+		left: 0;
+		background: green;
+	}
+
+	.pseudo--dash::before {
+		content: '';
+		position: absolute;
+		width: 33px;
+		height: 3px; 
+		left: -3px;
+		top: 10px;
+		background: #34D399;
+	}
+
+	.pseudo--dash::after {
+		content: '';
+		position: absolute;
+		width: 33px;
+		height: 3px;  
+		right: -3px;
+    	top: 10px;
+		background: #34D399;
+	}
+</style>

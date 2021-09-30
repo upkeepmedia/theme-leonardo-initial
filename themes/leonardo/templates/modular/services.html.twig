@@ -1,0 +1,22 @@
+<div class="bg-white visibility-track" id="{{page.title|hyphenize}}">
+    <div class="container w-10/12 mx-auto pt-10 pl-0 lg:py-12">
+		<div class="content text-center">
+            {% if content %}
+                {{content}}
+            {% endif %}
+        </div>
+        <div class="flex flex-wrap justify-center space-x-8 space-y-16 py-16">
+		{% for service in page.header.services %} 
+            <div class="w-3/12 text-center bg-gray-100 shadow-md z-10 p-8 ">
+                <div class="w-4/12 mx-auto text-center bg-green-400 rounded-full p-4">
+                    {{page.media[service.image].html('','','w-full service-icon')}}
+                </div>
+                <h3 class="py-4"> {{service.title}} </h3>
+                <p class="mb-4"> {{service.text}} </p>
+                <a href="{{service.button_page}}" class="font-bold"> {{service.button_text}} </a>
+            </div>
+		{% endfor %}
+        </div>
+    </div>
+</div>
+

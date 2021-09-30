@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75 75" stroke="currentColor">
+  <title>Listing</title>
+  <g>
+    <polyline points="49.63 9.94 7.37 9.94 7.37 53.4 67.63 53.4 67.63 29.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></polyline>
+    <rect x="13.37" y="15.94" width="20.94" height="18" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+    <rect x="26.44" y="53.65" width="22.12" height="11.41" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+    <line x1="14.68" y1="65.06" x2="60.32" y2="65.06" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></line>
+    <line x1="61.63" y1="15.94" x2="40.32" y2="15.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></line>
+    <line x1="55.63" y1="21.94" x2="40.32" y2="21.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></line>
+    <line x1="49.63" y1="27.94" x2="40.32" y2="27.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></line>
+    <line x1="53.63" y1="33.94" x2="40.32" y2="33.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></line>
+    <line x1="53.63" y1="33.94" x2="40.32" y2="33.94" fill="none" class="stroke-secondary" stroke-linecap="square" stroke-miterlimit="10" stroke-width="3"></line>
+    <rect x="13.37" y="39.94" width="7.29" height="7.23" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+    <rect x="27.03" y="39.94" width="7.29" height="7.23" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+    <rect x="40.32" y="39.94" width="7.29" height="7.23" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+    <rect x="53.63" y="39.94" width="7.29" height="7.23" fill="none" class="stroke-secondary" stroke-miterlimit="10" stroke-width="3"></rect>
+  </g>
+</svg>

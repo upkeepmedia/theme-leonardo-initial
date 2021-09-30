@@ -1,0 +1,45 @@
+<div class="bg-gray-100">
+    <div class="container mx-auto py-10 lg:py-24">
+    	<div class="">	
+    		<div class="content text-center mb-8 tracking-wider">
+    			{{content}}
+    		</div>
+    	</div>
+		{% if upkeep.grade_us %}
+			<style type="text/css">
+				iframe.report_card_widget .minimal .aggregate{
+					text-align: center !important;
+				}
+			</style>
+			<div class="gradeus-stream" data-show-aggregate-rating="true" data-include-empty="false" data-review-limit="5" data-url="{{ upkeep.grade_us }}"></div><script src="https://platform.reviewmgr.com/stream.js"></script>
+		{% else %}
+            <div class="flex flex-col md:space-x-4 lg:space-x-8 md:flex-row mx-auto flex-wrap mb-8">
+            {% for test in page.header.testimonials if test.full %}
+                <div class="bg-white p-4 md:p-8 mb-5 lg:mb-auto lg:mt-auto flex-1">
+                    <i class="fa fa-quote-left text-primary fa-3x mb-8"></i>
+                    <div class="content">{{ test.text|markdown }}</div>
+                    {{ media['theme://images/five-star.svg'].resize(125).html('','','d-block mt-8')}}
+                    <p class="h5 mb-0 mt-2">{{ test.author }}</p>
+                    <p class="h6 mb-0 text-gray-600">{{ test.title }}</p>
+                </div>
+            {% endfor %}
+            </div>
+            <div class="flex flex-row justify-center md:space-x-4 lg:space-x-8 flex-wrap">
+                {% for test in page.header.testimonials if not test.full %}
+                    <div class="bg-white p-4 md:p-8 w-3/12 mb-5 h-full">
+                        <div class="flex flex-row justify-between mb-4">
+                            <i class="fa fa-quote-left text-primary fa-3x"></i>    
+                            {{ media['theme://images/five-star.svg'].resize(125).html('','','d-block')}}
+                        </div>
+                        
+                        <div class="content">
+                            {{ test.text|markdown }}
+                        </div>
+                        <p class="h5 mb-0 mt-2">{{ test.author }}</p>
+                        <p class="h6 mb-0 text-gray-600">{{ test.title }}</p>
+                    </div>
+                {% endfor %}
+            </div>
+		{% endif %}
+    </div>
+</div>

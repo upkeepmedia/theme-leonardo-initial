@@ -1,0 +1,5 @@
+enabled: false
+active: true
+text_var: 'Custom Text added by the **Google Rating Badge** plugin (disable plugin to remove)'
+minimum_rating: 4.3
+place_Id: ChIJySnOAk3_rlQRTW4RsX3glbY

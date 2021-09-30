@@ -1,0 +1,51 @@
+contact_us: /contact-us
+testimonial: '0'
+logo:
+  user/assets/ovoono--favicon.png:
+    name: ovoono--favicon.png
+    type: image/png
+    size: 20422
+    path: user/assets/ovoono--favicon.png
+logo_svg: {  }
+favicons: {  }
+bg: {  }
+top_bar_color: text-primary
+top_bar_bg: bg-light
+footer_bg: bg-primary
+footer_right: areas
+logo_height: 80
+padding_top: 0
+places_api_key: AIzaSyB3yegJnmfQ6G7xhucyORVeMVY1tT8mXpc
+area_tag: span
+areas_page: /home
+banner: false
+footer_prefix: 'Property Management Websites by '
+navcontact_links:
+  -
+    title: 'Call Us Now!'
+    text: '+1898903281'
+    link: 'tel:1898903281'
+    icon: 'fa fa-phone'
+    break: '0'
+  -
+    title: 'Talk To Us!'
+    text: info@example.com
+    link: 'mailto:info@example.com'
+    icon: 'fa fa-envelope-o'
+    break: '0'
+banner_classes: 'bg-gray-800 text-white p-4'
+menu_as_links: true
+company_name: Apartio
+address: "enderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum\nfugiat quo voluptas nulla pariatur?\""
+social:
+  -
+    type: Facebook
+    url: 'https://facebook.com'
+    icon: 'fa fa-facebook-official'
+  -
+    type: Twitter
+    url: 'htttps://twitter.com'
+    icon: 'fa fa-twitter'
+prefooter_subtitle: 'Contact with Us'
+prefooter_title: 'Contact us Today. For All Your Construction Needs!'
+prefooter_button_url: /home

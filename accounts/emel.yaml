@@ -1,0 +1,11 @@
+state: enabled
+email: test@mail.com
+fullname: 'Emel R'
+title: admir
+access:
+  admin:
+    login: true
+    super: true
+  site:
+    login: true
+hashed_password: $2y$10$MIRNvJDiMsf2IajAP4L43e19LAvxxZFnVvBDt1LZwiaOGA/2P7MQy

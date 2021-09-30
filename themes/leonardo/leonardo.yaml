@@ -1,0 +1,11 @@
+streams:
+ schemes:
+   theme:
+     type: ReadOnlyStream
+     prefixes:
+       '':
+         - 'user://themes/leonardo'
+         - 'user://themes/upkeep'
+
+dropdown:
+  enabled: false

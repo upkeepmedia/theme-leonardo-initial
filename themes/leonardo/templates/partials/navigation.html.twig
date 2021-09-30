@@ -1,0 +1,116 @@
+<div class="z-30 top-0 right-0 left-0 top-links bg-gray-700 {{upkeep.navigation_style ?? 'uppercase'}}">
+    {% if upkeep.banner %}
+        <a class="w-full block {{upkeep.banner_classes}}" href="{{ upkeep.banner_link ? page.find(upkeep.banner_link).url : '#'}}">
+            {{upkeep.banner_text}}
+        </a>
+    {% endif %}
+    {# Top Row Social and Contact Info #}
+	<div class="{{upkeep.top_bar_bg ? 'bg-gray-100'}} px-4 md:px-8">
+        <div class="flex flex-rows">
+            <div class="m-0.5 mx-auto md:mx-0 hidden lg:block my-auto">
+                {% for portal in upkeep.portals %}
+                    {% set portalPage = page.find(portal.page) %}
+                    <a class="font-bold  tracking-wider pr-2 text-sm rounded-none text-primary" 
+                    href="{{portalPage.url}}" {{portalPage.template == 'external' ? 'target="_blank"'}}>{{portal.text}}</a>
+                {% endfor %}
+            </div>
+            <div class="m-0.5 mx-auto text-center md:mx-0 md:ml-auto md:text-right">
+                {% for link in upkeep.contact_links %}
+                    <a class="font-bold hidden  px-1  rounded-none text-white {{link.break ? 'lg:block' : 'lg:inline-block' }}" 
+                    href="{{link.link}}"><i class="{{link.icon}} mr-2"></i>{{link.text}}</a>
+                {% endfor %}
+                <a class=" text-amber-800 lg:hidden md:ml-4 font-bold text-primary" href="{{upkeep.mobile_link}}">{{upkeep.mobile_link_text}}</a>
+            </div>
+        </div>
+	</div>
+
+    <nav class="lg:w-10/12 flex flex-col content-center mx-auto lg:flex-row tex justify-around {{upkeep.navigation_style ?? 'uppercase'}}" >
+        <div class="flex-row flex justify-between">
+            <a class="inline-block mr-8 p-2 whitespace-nowrap navbar-brand text-white my-auto " 
+                href="{{ base_url == '' ? '/' : base_url }}">
+                {% if upkeep.logo %}
+                    <img style="max-height:{{upkeep.logo_height ? upkeep.logo_height : '30'}}px"  
+                    height="{{upkeep.logo_height ? upkeep.logo_height : '30'}}" 
+                    src="{{ url(upkeep.logo|first.path) }}"/>
+                {% else %}
+                    <span class="h3 text-primary">{{upkeep.company_name}}</span>
+                {% endif %}
+            </a>
+            <button id="nav-toggle-btn" class="lg:hidden p-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span>
+                    <i class="fa fa-bars text-3xl" id="menu-open-icon"></i>
+                    <i class="fa fa-times text-3xl hidden" id="menu-close-icon"></i>
+                </span>
+            </button>
+        </div>
+        <div class="flex-row justify-items-end align-center hidden md:flex md:h-auto font-heading text-white" id="navbarSupportedContent">
+            <div class="flex flex-col md:flex-row text-sm">
+                {% for p in pages.children %}
+                    {% if p.visible and p.published %}
+                    {% if (p.children.count() > 0) and (p.template != "modular") and (p.header.dropdown != 'disabled') %}
+                        <div class="lg:flex h-full lg:items-center group relative transition-colors duration-300 hover:text-green-400 px-4 py-4 lg:py-0 text-white font-bold " href="#">
+                                {{ p.header.menu ? p.header.menu : p.title }} <i class="fa hidden lg:block fa-caret-down ml-2 text-white"></i>
+                                <ul class="bg-white hover:text-green-400 hidden transition-all opacity-0 duration-300 group-hover:block group-hover:opacity-100 delay-300 lg:absolute top-full left-0  min-w-full text-left list-none bg-gray-50 right-0 left-auto" aria-labelledby="navbarDropdown">
+                                {% for pchild in p.children if pchild.published and pchild.visible %}
+                                    {% if pchild.children.count() > 0 and (pchild.template != 'modular') and (p.header.dropdown != false ) %}
+                                    <li class="border-4 relative dropleft transition-colors duration-300 hover:text-green-400">
+                                        <a class="" href="{{pchild.template == "internal" ? page.find(pchild.url).url : pchild.url}}">
+                                            {{ pchild.header.menu ? pchild.header.menu : pchild.title }}
+                                        </a>			
+                                        <ul class="transition-colors duration-300 hover:text-green-400 lg:absolute top-full left-0  float-left min-w-full py-10 text-left list-none bg-gray-50 text-amber-800 bg-clip-padding right-0 left-auto" aria-labelledby="navbarDropdown">	  
+                                            {% for sub in pchild.children if sub.routable and (sub.template != 'modular') and (sub.header.dropdown != false )%}
+                                            <li class="px-3 transition-colors duration-300 hover:text-green-400">
+                                                    <a class="text-white   block py-10 px-8 block w-full py-10 px-8 clear-both font-bold tracking-wider text-sm text-amber-800 whitespace-nowrap bg-transparent border-0" href="{{sub.url}}">
+                                                        {{ sub.header.menu ? sub.header.menu : sub.title }}
+                                                    </a>
+                                            </li>						  				
+                                            {% endfor %}
+                                        </ul>
+                                    </li> 
+                                    {% else %}
+                                        <li class="group bg-gray-100 transition-colors duration-300 hover:text-green-400">
+                                        
+                                            <a class=" bg-gray-100 transition-colors duration-300 hover:bg-gray-300 text-white block p-2 font-bold whitespace-nowrap" {{ pchild.template == 'external' ? 'target="_blank" rel="nofollow"' }} href="{{pchild.template == "internal" ? page.find(pchild.url).url : pchild.url}}">
+                                                {{ pchild.header.menu ? pchild.header.menu : pchild.title }}
+                                            </a>
+                                        </li>
+                                    {% endif %}	      
+                                    
+                                {% endfor %}
+                                </ul>
+                        </div>				   
+                    {% else %}			  
+                            <a class="flex h-full items-center text-white transition-colors duration-300 hover:text-green-400 px-4 py-4 lg:py-0 font-bold " href="{{p.url}}" {{ p.template == 'external' ? 'target="_blank" rel="nofollow"' }}>{{ p.header.menu ? p.header.menu : p.title }}</a>
+                    {% endif %}	
+                {% endif %}		
+            {% endfor %}	     
+                {% set contact_us = page.find(upkeep.contact_us) %}
+                    <a class="flex h-full items-center text-white transition-colors duration-300 px-4 py-4 lg:py-0 font-bold  " {{ contact_us.template == 'external' ? 'target="_blank" rel="nofollow"' }} href="{{contact_us.url}}">{{ contact_us.header.menu ? contact_us.header.menu : contact_us.title }}</a>
+            </div>
+        </div>
+        {# Navigation Contact Info #}
+        <div class="flex flex-row justify-items-end align-center text-white text-sm space-x-8 py-4 lg:py-0 font-bold"> 
+            {% for link in upkeep.navcontact_links %}
+                <div class="flex h-full items-center">
+                    <i class="{{link.icon}} fa-2x mr-4 text-green-500"></i>
+                    <div class="flex flex-col pl-2">
+                        <span> {{link.title}} </span>
+                        <a class="font-bold hidden px-1 rounded-none {{link.break ? 'lg:block' : 'lg:inline-block' }}" 
+                        href="{{link.link}}">{{link.text}}</a>
+                    </div>
+                </div>
+            {% endfor %}
+            <a class="text-white lg:hidden md:ml-4 font-bold text-primary" href="{{upkeep.mobile_link}}">{{upkeep.mobile_link_text}}</a> 
+        </div>
+    </nav>
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#nav-toggle-btn").click(function(){
+			$("#navbarSupportedContent").toggle();
+			$("#menu-open-icon").toggle();
+			$("#menu-close-icon").toggle();
+		});
+	});
+</script>
