@@ -26,10 +26,10 @@
             </div>
             <div class="flex flex-row justify-center md:space-x-4 lg:space-x-8 flex-wrap">
                 {% for test in page.header.testimonials if not test.full %}
-                    <div class="bg-white p-4 md:p-8 w-3/12 mb-5 h-full shadow-md">
+                    <div class="bg-white p-4 md:p-8 w-6/12 md:w-3/12 mb-5 h-full shadow-md">
                         <div class="flex flex-row justify-between mb-4">
                             <i class="fa fa-quote-left text-primary fa-3x"></i>    
-                            {{ media['theme://images/five-star.svg'].resize(125).html('','','d-block')}}
+                            {{ media['theme://images/five-star.svg'].html('','','w-3/6 md:w-4/6 d-block')}}
                         </div>
                         
                         <div class="content">

@@ -26,7 +26,7 @@
 
     <nav class="lg:w-10/12 flex flex-col content-center mx-auto lg:flex-row tex justify-around {{upkeep.navigation_style ?? 'uppercase'}}" >
         <div class="flex-row flex justify-between">
-            <a class="inline-block mr-8 p-2 whitespace-nowrap navbar-brand text-white my-auto " 
+            <a class="inline-block ml-8 md:ml-0 md:mr-8 p-2 whitespace-nowrap navbar-brand text-white my-auto" 
                 href="{{ base_url == '' ? '/' : base_url }}">
                 {% if upkeep.logo %}
                     <img style="max-height:{{upkeep.logo_height ? upkeep.logo_height : '30'}}px"  
@@ -36,7 +36,7 @@
                     <span class="h3 text-primary">{{upkeep.company_name}}</span>
                 {% endif %}
             </a>
-            <button id="nav-toggle-btn" class="lg:hidden p-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button id="nav-toggle-btn" class="lg:hidden mr-8 md:mr-0 p-3" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span>
                     <i class="fa fa-bars text-3xl" id="menu-open-icon"></i>
                     <i class="fa fa-times text-3xl hidden" id="menu-close-icon"></i>
@@ -89,10 +89,10 @@
             </div>
         </div>
         {# Navigation Contact Info #}
-        <div class="flex flex-row mx-auto space-x-4 lg:justify-items-end lg:align-center text-white text-sm lg:space-x-8 py-4 lg:py-0 font-bold"> 
+        <div class="flex flex-row justify-end md:justify-center lg:justify-items-end lg:align-center space-x-14 lg:space-x-8 py-4 lg:py-0 font-bold text-white text-sm"> 
             {% for link in upkeep.navcontact_links %}
                 <div class="flex h-full items-center">
-                    <i class="{{link.icon}} fa-2x mr-4 text-green-500"></i>
+                    <i class="{{link.icon}} fa-2x md:mr-4 text-green-500"></i>
                     <div class="flex flex-col pl-2">
                         <span> {{link.title}} </span>
                         <a class="font-bold hidden px-1 rounded-none {{link.break ? 'lg:block' : 'lg:inline-block' }}" 

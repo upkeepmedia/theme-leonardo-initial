@@ -1,10 +1,10 @@
 <div id="{{page.header.title}}" class="{{page.header.classs}}">
-    <div class="text-center content container mx-auto w-10/12 py-10 lg:py-12">
+    <div class="content container mx-auto md:w-10/12 py-10 lg:py-12 text-center ">
         {{content|raw}}
 
-        <div class="family-wrapper flex flex-row justify-center space-x-4 py-8">
+        <div class="family-wrapper flex flex-col md:flex-row justify-center md:space-x-4 py-8">
             {% for member in page.header.family %}
-                <div class="family-box rounded bg-white shadow-md w-3/12">
+                <div class="family-box rounded bg-white shadow-md my-4 md:my-0 md:w-3/12">
                     <div class="head">
                         {{ page.media[member.image].html('','','w-full h-48') }}
                     </div>

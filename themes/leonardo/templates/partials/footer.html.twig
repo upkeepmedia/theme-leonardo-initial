@@ -4,16 +4,16 @@
 {% endif %} 
 
 <div class="prefooter-banner bg-black">
-	<div class="container mx-auto w-8/12 lg:pt-28 lg:pb-10">
-        <div class="flex flex-row items-center py-18">
-            <div class="w-7/12">    
+	<div class="container mx-auto md:w-8/12 py-14 lg:pt-28 lg:pb-10">
+        <div class="flex flex-col md:flex-row md:items-center md:py-18">
+            <div class="md:w-7/12">    
                 <span class="pseudo-dash flex flex-row items-center text-green-400"> {{ upkeep.prefooter_subtitle }}</span>	
-                <h2 class="text-white text-3xl"> {{upkeep.prefooter_title}} </h2>
+                <h2 class="text-white  text-xl md:text-3xl"> {{upkeep.prefooter_title}} </h2>
 				<p class="text-white">
 					{{upkeep.prefooter_content}}
 				</p>
             </div>
-            <div class="w-5/12 text-center">
+            <div class="md:w-5/12 py-4 md:py-0 text-left md:text-center">
                 <a  href="{{upkeep.prefooter_button_link}}" 
                     class="rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-3">
                     {{upkeep.prefooter_button_text}}
@@ -23,7 +23,7 @@
 	</div>
 </div>
 <footer class="bg-black">
-	<div class="container mx-auto w-8/12 pt-10 md:py-12">	
+	<div class="container mx-auto md:w-8/12 pt-10 md:py-12">	
 		<div class="flex flex-col lg:flex-row lg:space-x-4">
 			<div class="mb-10 text-white flex-1">
 				<p class="text-2xl text-white font-heading uppercase font-bold mb-4 pr-10">{{upkeep.company_name}}</p>

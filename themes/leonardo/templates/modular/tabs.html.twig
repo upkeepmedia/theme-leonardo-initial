@@ -5,8 +5,8 @@
 		</div>		
 	</div>
 
-    <div id="tabs" class="bg-white w-10/12 mx-auto md:p-8 p-4" data-ride="carousel">
-		<div class="flex flex-wrap justify-center">
+    <div id="tabs" class="bg-white w-11/12 mt-8 md:mt-0 md:w-9/12 mx-auto md:p-8" data-ride="carousel">
+		<div class="flex md:flex-wrap justify-center">
 			{% for tab in header.slides %}
                 <a data-target="#tabs" data-slide-to="{{loop.index0}}" role="button" class="border-b-2 w-1/2 md:w-1/3 lg:w-1/4 xl:w-auto tab px-3 py-1 mb-4 xl:mb-0 xl:px-5 xl:py-4 transition-all text-center duration-300 inline-block  {{ loop.first ? 'text-accent ' : 'bg-white text-black'}} text-sm hover:bg-gray-200  font-extrabold">{{tab.name}}</a>
 			{% endfor %}
@@ -16,8 +16,8 @@
 		<div class="tab-inner mx-auto w-10/12 py-10">
 			{% for tab in header.slides %}
 				<div class="tab-item {{ loop.first ? 'block' : 'hidden'}}" data-slide-index="{{loop.index0}}">
-					<div class="tab-content content flex flex-row">
-						<div class="w-1/2 pr-8">
+					<div class="tab-content content flex flex-col md:flex-row">
+						<div class="md:w-1/2 md:pr-8 mb-8 md:mb-0">
                             <div class="my-6">
                                 {{tab.content|markdown}}
                             </div>
@@ -25,7 +25,7 @@
                                 <a href="{{ base_url ~ b.url}}" rel="nofollow" role="button" class="rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 my-16 {{ b.classes ? b.classes : 'btn-outline-primary'}}">{{b.text}}</a>
                             {% endfor %}
                         </div>
-                        <div class="w-1/2">
+                        <div class="md:w-1/2">
                             {{page.media[tab.plan].html('','','w-full rounded shadow-md')}}
                         </div>
 					</div>

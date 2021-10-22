@@ -1,12 +1,12 @@
 <div id="{{page.title}}" class="modular-row {{page.header.classes}} bg-white">
-    <div class="container w-9/12 mx-auto py-4 lg:py-16">
+    <div class="container md:w-9/12 mx-auto py-8 lg:py-16">
 		<div class="flex flex-row flex-wrap">
 			{% set test = page.header.testimonials|first %}
             <div class="lg:w-3/6 content lg:py-12 md:pr-10 w-full">
                     {{page.content|raw}}
             </div>
-            <div class="lg:w-3/6 w-full">
-                <div class="h-full  bg-white p-4">
+            <div class="lg:w-3/6">
+                <div class="h-full bg-white p-4">
                     {# <iframe src="https://www.google.com/maps/embed/v1/place?key={{upkeep.places_api_key}}&q=place_id:{{upkeep.place_id}}" 
                         width="100%"
                         height="100%"
@@ -14,7 +14,7 @@
                         class="rounded"
                         style="min-height:300px" >
                     </iframe> #}
-                    {{media['Screenshot_1.png'].html('','','w-full rounded shadow-lg')}}
+                    {{media['Screenshot_1.png'].html('','','w-full text-center md:text-left my-8 rounded shadow-lg')}}
                 </div>
             </div>
 		</div>
