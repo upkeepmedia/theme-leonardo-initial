@@ -1,13 +1,13 @@
-<div class="flex flex-row justify-end bg-gray-700"> 
-    <div class="z-20 relative bg-cover bg-right rounded-3xl {{page.header.bg_color ? page.header.bg_color : 'top-4 left-0 w-11/12 bg-secondary'}}" 
+<div class="flex flex-row md:justify-end bg-gray-700"> 
+    <div class="md:w-11/12 z-20 relative bg-cover bg-right lg:rounded-3xl {{page.header.bg_color ? page.header.bg_color : 'top-4 left-0 bg-secondary'}}" 
         {% if not page.header.bg_color %}
             style="background-image:url({{ media[page.header.bg].url  ? media[page.header.bg].url : media['user://assets/' ~ upkeep.bg|first.name].url}})"
         {% endif %}
         >
-        <div class="absolute rounded-3xl {{ page.header.bg_color ? 'hidden'}} top-0 right-0 h-full w-full bg-gray-900 bg-opacity-30"></div>
-        <div class="px-24 md:py-24 relative z-20 {{page.header.container ? 'container mx-auto'}}">
-            <div class="{{ page.adjacentSibling(-1).template == 'modular/boxes' ? 'pb-14' }} tracking-widest pb-12 py-10 lg:pt-16 lg:pb-24 mx-auto {{ page.header.textalign ?? 'text-center'}} text-light">
-                <div class="text-white text-3xl md:text-5xl mb-8 tracking-wider">
+        <div class="absolute md:rounded-3xl {{ page.header.bg_color ? 'hidden'}} top-0 right-0 h-full w-full bg-gray-900 bg-opacity-30"></div>
+        <div class="p-12 md:p-24 relative z-20 {{page.header.container ? 'container mx-auto'}}">
+            <div class="{{ page.adjacentSibling(-1).template == 'modular/boxes' ? 'pb-14' }} tracking-widest lg:py-10 lg:pt-16 lg:pb-24 mx-auto {{ page.header.textalign ?? 'text-center'}} text-light">
+                <div class="text-white text-4xl md:text-5xl mb-8 tracking-wider">
                     {{ page.content|raw }}
                 </div>
                 {% if page.header.button_page and page.header.button_text %}
