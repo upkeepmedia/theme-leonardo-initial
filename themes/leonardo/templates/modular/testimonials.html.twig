@@ -1,5 +1,5 @@
-<div class="bg-gray-100">
-    <div class="container mx-auto py-10 lg:py-24">
+<div id="{{page.header.title}}" class="{{page.header.classes}}">
+    <div class="container mx-auto py-10 lg:py-12">
     	<div class="">	
     		<div class="content text-center mb-8 tracking-wider">
     			{{content}}
@@ -26,7 +26,7 @@
             </div>
             <div class="flex flex-row justify-center md:space-x-4 lg:space-x-8 flex-wrap">
                 {% for test in page.header.testimonials if not test.full %}
-                    <div class="bg-white p-4 md:p-8 w-3/12 mb-5 h-full">
+                    <div class="bg-white p-4 md:p-8 w-3/12 mb-5 h-full shadow-md">
                         <div class="flex flex-row justify-between mb-4">
                             <i class="fa fa-quote-left text-primary fa-3x"></i>    
                             {{ media['theme://images/five-star.svg'].resize(125).html('','','d-block')}}

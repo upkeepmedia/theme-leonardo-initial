@@ -8,7 +8,12 @@ logo:
     path: user/assets/ovoono--favicon.png
 logo_svg: {  }
 favicons: {  }
-bg: {  }
+bg:
+  user/assets/stars-g3e7e1644f_1920.jpg:
+    name: stars-g3e7e1644f_1920.jpg
+    type: image/jpeg
+    size: 716772
+    path: user/assets/stars-g3e7e1644f_1920.jpg
 top_bar_color: text-primary
 top_bar_bg: bg-light
 footer_bg: bg-primary
@@ -46,6 +51,9 @@ social:
     type: Twitter
     url: 'htttps://twitter.com'
     icon: 'fa fa-twitter'
-prefooter_subtitle: 'Contact with Us'
-prefooter_title: 'Contact us Today. For All Your Construction Needs!'
+prefooter_subtitle: 'Start Now'
+prefooter_title: 'Are You Maximizing Your Rental Investment’s Potential?'
+prefooter_content: 'Find out how much rent you can get and learn about how we 
+eliminate the stress of self-management.'
+prefooter_button_text: 'Get started'
 prefooter_button_url: /home

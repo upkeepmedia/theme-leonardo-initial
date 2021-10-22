@@ -3,7 +3,7 @@ title: Boxes
 body_classes: modular
 cols:
     -
-        title: 'Property Management'
+        title: 'Property Management Services'
         text: 'Are you looking for professional property management services?'
         page: /home
         icon: checklist.svg

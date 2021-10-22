@@ -8,16 +8,16 @@
                 {% if content %}
                     {{content}}
                 {% endif %}
-                <a href="#">
+                <a href="{{page.header.button_link}}">
                     <button class="bg-red-500 hover:bg-red-700 text-white rounded font-bold py-2 px-4 mt-3">
-                        Find an agent
+                        {{page.header.button}}
                     </button> 
                 </a>
             </div>
-            <div class="flex flex-wrap justify-end content-end w-3/12">
+            <div class="flex flex-wrap justify-end pseuod-dots--left content-end w-3/12">
                 {{ page.media[header.image_left].resize(150).quaity(100).html('','','w-5/6 rounded-lg offer-image') }}
             </div>
-            <div class="flex flex-wrap justify-center content-start w-3/12">
+            <div class="flex flex-wrap content-start pseuod-dots--right w-3/12">
                 {{ page.media[header.image_right].resize(200).quaity(100).html('','','w-4/6 rounded-lg offer-image') }}
             </div>
         </div>

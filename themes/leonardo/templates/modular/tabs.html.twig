@@ -1,12 +1,11 @@
-<div class="pb-6 pt-4 lg:pt-20">
-	<div class="container mx-auto">
+<div id="{{page.header.title}}" class="{{page.header.classes}}">
+	<div class="container mx-auto pt-12">
 		<div class="text-center content xl:w-2/3 mx-auto">
 			{{page.content}}
 		</div>		
 	</div>
-</div>
-<div class="bg-white pt-4 ">	
-	<div id="tabs" class="bg-white w-10/12 mx-auto md:p-8 p-4" data-ride="carousel">
+
+    <div id="tabs" class="bg-white w-10/12 mx-auto md:p-8 p-4" data-ride="carousel">
 		<div class="flex flex-wrap justify-center">
 			{% for tab in header.slides %}
                 <a data-target="#tabs" data-slide-to="{{loop.index0}}" role="button" class="border-b-2 w-1/2 md:w-1/3 lg:w-1/4 xl:w-auto tab px-3 py-1 mb-4 xl:mb-0 xl:px-5 xl:py-4 transition-all text-center duration-300 inline-block  {{ loop.first ? 'text-accent ' : 'bg-white text-black'}} text-sm hover:bg-gray-200  font-extrabold">{{tab.name}}</a>
@@ -14,11 +13,11 @@
 		</div>
 
 		<!-- Wrapper for slides -->
-		<div class="tab-inner mx-auto w-10/12 xl:p-16 p-4 lg:p-8 ">
+		<div class="tab-inner mx-auto w-10/12 py-10">
 			{% for tab in header.slides %}
 				<div class="tab-item {{ loop.first ? 'block' : 'hidden'}}" data-slide-index="{{loop.index0}}">
 					<div class="tab-content content flex flex-row">
-						<div class="w-1/2">
+						<div class="w-1/2 pr-8">
                             <div class="my-6">
                                 {{tab.content|markdown}}
                             </div>
@@ -27,14 +26,14 @@
                             {% endfor %}
                         </div>
                         <div class="w-1/2">
-                            {{page.media[tab.plan].html('','','w-full plan-image')}}
+                            {{page.media[tab.plan].html('','','w-full rounded shadow-md')}}
                         </div>
 					</div>
 				</div>
 			{% endfor %}
 		</div>
-	</div>		
-</div>
+	</div>	
+</div> 
 
 <script type="text/javascript">
     $(document).ready( function() {

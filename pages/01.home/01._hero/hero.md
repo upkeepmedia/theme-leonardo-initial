@@ -8,13 +8,13 @@ routes: {  }
 container: false
 gradient_bg: false
 textalign: text-left
-media_order: hero--image.jpg
-bg: hero--image.jpg
-button_text: 'Browse Listings'
+media_order: 'architecture-gaa5dd3c7b_1920.jpg,stars-g3e7e1644f_1920.jpg'
+bg: architecture-gaa5dd3c7b_1920.jpg
+bg_wrapper: stars-g3e7e1644f_1920.jpg
+button_text: 'Manage My Property'
 ---
 
-#  Modern Apartment
-#  In A New Residential
-# Complex
-<span class="text-base"> oloremque laudantium, totam rem aperiam, eaque ipsa quae ab</span>
+# Texas Property 
+# Management Company
+<span class="text-base"> Are you maximizing your rental investment’s potential?</span>
  

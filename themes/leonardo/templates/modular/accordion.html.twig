@@ -1,10 +1,10 @@
 
-<div id="accordion" class="{{body_classes}} modular-row content">
-    <div class="container text-center w-10/12 mx-auto">
+<div id="{{page.header.title}}" class="{{body_classes}} modular-row content">
+    <div class="container text-center mx-auto w-10/12">
         {{ page.content|raw }}
-        <div class="flex flex-row flex-wrap justify-center space-x-4 lg:py-16">  
+        <div class="flex flex-wrap justify-center space-x-2 space-y-2 lg:py-16">  
             {% for q in page.header.questions %}
-                <div class="m-4 shadow-md text-left">
+                <div class="w-5/12 shadow-md text-left">
                     {% if q.heading %}
                         <div class="">
                             <h2 style="margin-top:2rem">{{q.q}}</h2>	

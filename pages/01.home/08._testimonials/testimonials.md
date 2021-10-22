@@ -3,7 +3,7 @@ title: Testimonials
 body_classes: modular
 sidebar: None
 testimonial: '0'
-classes: bg-gray
+classes: null
 media_order: Screenshot_4.png
 testimonials:
     -
@@ -39,6 +39,6 @@ testimonials:
 ---
 
 <span class="pseudo--dash d-inline-block mx-auto items-center text-green-400">  People Trust Us </span>
-## People Say About Us
+## What Do Our Client Say About Us?
 But in order that you may understand whence every born 
 error is the pleasure of accusing and praising the pain, I will

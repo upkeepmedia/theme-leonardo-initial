@@ -1,5 +1,5 @@
-<div class="bg-gray-900" id="{{page.title}}">
-    <div class="container w-10/12 mx-auto text-center text-white content py-16 ">
+<div class="{{page.header.classes}}" id="{{page.title}}">
+    <div class="container w-9/12 mx-auto text-center text-white content py-10 lg:py-12">
         {{content}}
         <div class="flex flex-row justify-evenly pt-4">
             {% for award in page.header.awards %}

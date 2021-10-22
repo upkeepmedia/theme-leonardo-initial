@@ -1,41 +1,43 @@
 ---
 title: Services
 body_classes: modular
+button_text: 'Why Choose US'
+button_page: /home
 services:
     -
-        title: 'Parking Space'
+        title: MARKETING
         image: checklist.svg
-        text: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit'
+        text: "We pride ourselves on our proactive marketing and showing techniques \nproven to consistently fill units with great tenants."
         button_text: 'Read More'
         button_page: /home
     -
-        title: 'Green Space'
+        title: 'TENANT SCREENING'
         image: hand.svg
-        text: 'et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
+        text: "We conduct extensive screening on all prospective tenants and handle every\naspect of getting your investment rented quickly."
         button_text: 'Read More'
         button_page: /home
     -
-        title: 'Fast speed WiFi'
+        title: 'RENT COLLECTION'
         image: listing.svg
-        text: 'Find your next rental home in the Sprinfield Area'
+        text: "We make sure you get paid on time, every time. You no longer have to worry\nabout rent showing up in your bank account"
         button_text: 'Read More'
         button_page: /home
     -
-        title: 'Louging Pool'
+        title: MAINTENANCE
         image: listing.svg
-        text: 'ullamco laboris nisi ut aliquip ex ea commodo consequat.'
+        text: "Rather than trying to find a third-party vendor, you can rest assured that our \nstaff is taking care of the problem in a timely manner."
         button_text: 'Read More'
         button_page: /home
     -
-        title: 'Sporting Facility'
+        title: 'FINANCIAL REPORTING'
         image: hand.svg
-        text: 'et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
+        text: "With our detailed financial reporting tools, it's never been easier to keep tabs\non your investment."
         button_text: 'Read More'
         button_page: /home
     -
-        title: 'Luxury Properties'
+        title: 'EVICTION PROTECTION'
         image: checklist.svg
-        text: 'Duis aute irure dolor in reprehenderit'
+        text: "In the event that a tenant needs to be evicted from your rental, we will shield\nyou from the stress and re-rent the property promptly."
         button_text: 'Read More'
         button_page: /home
 testimonial: '0'
@@ -43,6 +45,6 @@ routes: {  }
 sidebar: right
 ---
 
-<span class="pseudo--dash d-inline-block mx-auto items-center text-green-800"> Refined service and amenities  that matter </span>
-## Making Living Spaces Affordable
+<span class="pseudo--dash d-inline-block mx-auto items-center text-green-800"> Property Management Benefits </span>
+## What We Do As Your Texas Property Manager
 Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

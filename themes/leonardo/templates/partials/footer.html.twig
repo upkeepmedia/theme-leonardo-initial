@@ -9,11 +9,14 @@
             <div class="w-7/12">    
                 <span class="pseudo-dash flex flex-row items-center text-green-400"> {{ upkeep.prefooter_subtitle }}</span>	
                 <h2 class="text-white text-3xl"> {{upkeep.prefooter_title}} </h2>
+				<p class="text-white">
+					{{upkeep.prefooter_content}}
+				</p>
             </div>
             <div class="w-5/12 text-center">
                 <a  href="{{upkeep.prefooter_button_link}}" 
                     class="rounded bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 mt-3">
-                    Find an Agent!
+                    {{upkeep.prefooter_button_text}}
                 </a>
             </div>
         </div>
@@ -106,21 +109,50 @@
 </footer>
 
 <style>
-	.content h2, .content .h2 {
-		font-size: 2.4rem;
+	.content h2 {
+		font-size: 2rem;
 		letter-spacing: unset;
 		font-family: 'Merriweather';
 		font-weight: 800;
 		color: black;
+		margin-bottom: 9px;
 	}
 
-	.content h5, .content h5 {
+	.content h5, .content h3 {
 		letter-spacing: unset;
 		font-family: 'Merriweather';
+		margin-bottom: 9px;
 	}
 
 	#Awards h2, #Awards h5 {
 		color: white!important;
+	}
+
+	div#Facts, div#Family {
+		background: #e4e4e4;
+	}
+
+	#Facts .content h2 {
+		font-size: 2rem;
+		letter-spacing: unset;
+		font-family: 'Merriweather';
+		font-weight: 800;
+		color: #000;
+	} 
+	
+	#Facts .content h5 {
+		color: #000;
+		font-size: 47px;
+		margin: 0;
+		margin-top: -5px;
+	}
+
+	#Facts .content p, #Facts .content span {
+		color: #000;
+	}
+
+	#Facts .flex.flex-row.justify-evenly.pt-4 div:nth-child(odd) {
+		margin-top: 80px;
 	}
 
 	.pseudo-dash, .pseudo--dash {
@@ -156,5 +188,31 @@
 		right: -3px;
     	top: 10px;
 		background: #34D399;
+	}
+
+	.circle--background {
+		background: #34d399;
+		padding: 12px;
+		border-radius: 50%;
+		color: #048958;
+	}
+	
+
+	div#Testimonials i.fa.fa-quote-left {
+		border: 3px solid #34d399;
+		padding: 9px;
+		border-radius: 50%;
+		font-size: 24px;
+		color: #34d399;
+	}
+
+	div#Property\ Group ul {
+		columns: 2;
+		-webkit-columns: 2;
+		-moz-columns: 2;
+	}
+
+	div#Property\ Group h3 {
+		color: #000;
 	}
 </style>
